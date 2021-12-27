@@ -1,0 +1,22 @@
+﻿@model List<Urun>
+@{
+   // Layout = "_Layout"; viewstart içine yazdık.
+    ViewBag.Title = "Ana Sayfa @View";
+}
+
+<h1>Ürünlerimiz</h1>
+@foreach (var item in Model)
+{
+    <p> 
+      @item.Id - @item.UrunAdi - @($"{item.Fiyat:c2}")
+    </p>
+}
+@for (var i = 0; i < 10; i++)
+{
+    <span>@i</span>
+}
+@section Scripts{
+    <script>
+        App.selamla();
+    </script>
+}
