@@ -1,4 +1,5 @@
 using ITServiceApp.Data;
+using ITServiceApp.Extensions;
 using ITServiceApp.InjectOrnek;
 using ITServiceApp.Models.Identity;
 using ITServiceApp.Models.Services;
@@ -51,7 +52,7 @@ namespace ITServiceApp
                 options.AccessDeniedPath = "/Account/AccessDenied";
                 options.SlidingExpiration = true;
             });
-            services.AddTransient<IEmailSender, EmailSender>();
+            services.AddApplicationServices(this.Configuration);
             services.AddScoped<IMyDependency, NewMyDependency>();
             services.AddControllersWithViews();
 
